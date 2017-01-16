@@ -38,7 +38,7 @@ app.set("view engine", "handlebars");
 // Database configuration
 var databaseUrl = "mongo_scraper";
 var collections = ["articles", "comments"];
-mongoose.connect("mongolab-shaped-27496");
+mongoose.connect("mongodb://heroku_f5q2v92x:7617d8k6a9q2imvqvi6ubkgcmk@ds111479.mlab.com:11479/heroku_f5q2v92x");
 var db = mongoose.connection;
 // Hook mongojs configuration to the db variable
 //var db = mongojs(databaseUrl, collections);
