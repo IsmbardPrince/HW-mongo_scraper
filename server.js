@@ -16,6 +16,7 @@ mongoose.Promise = Promise;
 
 // Initialize Express
 var app = express();
+var port = process.env.PORT || 3000;
  
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -57,6 +58,6 @@ require("./routes/routes.js")(app);
 
 
 // Listen on port 3000
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("App running on port 3000!");
 });
