@@ -38,7 +38,7 @@ app.set("view engine", "handlebars");
 // Database configuration
 var databaseUrl = "mongo_scraper";
 var collections = ["articles", "comments"];
-mongoose.connect("mongodb://localhost/mongo_scraper");
+mongoose.connect("mongolab-shaped-27496");
 var db = mongoose.connection;
 // Hook mongojs configuration to the db variable
 //var db = mongojs(databaseUrl, collections);
@@ -50,7 +50,7 @@ db.once("open", function() {
 });
 
 // Routes =============================================================
-require("./Routes/routes.js")(app);
+require("./routes/routes.js")(app);
 
 //var Article = require("./models/Article.js");
 //var Comment = require("./models/Comment.js");
