@@ -1,0 +1,43 @@
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <h1 class="header center teal-text text-lighten-2">Mongo-Scraper     Salon Edition</h1>
+        <div class="row center">
+          <h5 id="article-title" class="header col s12 light" article-id="{{article._id}}">Article Comments for:</h5>
+          <a id="article-title-link" href="{{article.link}}" target="_blank">{{article.title}}</a>
+          <br>
+         <a id="comment-add" class="comment-add waves-effect waves-light btn" article-id="{{article._id}}">Add&nbsp;a&nbsp;New&nbsp;Comment</a></td>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/assets/img/background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m12">
+          <table class="comment-table bordered">
+            <tbody>
+              {{#each article.comments}}
+                <tr>
+                  <td><p class="comment-text">{{this.comment}}</p></td>
+                  <td class="table-buttons">
+                    <a class="comment-edit waves-effect waves-light btn" comment-id="{{this._id}}">Edit</a>
+                    <a class="comment-delete waves-effect waves-light btn" comment-id="{{this._id}}">Delete</a>
+                  </td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {{> addcomment}}
+
+  <script type="text/javascript" src="/assets/js/commentlist.js"></script>

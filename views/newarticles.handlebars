@@ -1,0 +1,60 @@
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Mongo-Scraper     Salon Edition</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">These are the currently available articles for this Mongo-Scraper edition</h5>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="/assets/img/background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m12">
+          <table class="article-table bordered">
+            <tbody>
+              {{#each articles}}
+                <tr>
+                  <td><a class="article-link" href="{{this.link}}" target="_blank">{{this.title}}</a></td>
+                  {{#if this.saved}}
+                    <td><a class="disabled btn" article-ndx="{{this.ndx}}">Saved</a></td>
+                  {{else}}
+                    <td><a class="article-save waves-effect waves-light btn" article-ndx="{{this.ndx}}">Save</a></td>
+                  {{/if}}
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Article:</h4>
+      <p id="save-confirm-article-title">article title</p>
+      <p>has been saved. Do you want to add a comment now? If not now, you can always retrieve a saved article and add
+      comments later.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Not Now</a>
+      <a id="add-article-comment" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" article-id="">
+        Add a Comment
+      </a>
+    </div>
+  </div>
+
+  {{> addcomment}}
+
+  <script type="text/javascript" src="/assets/js/newarticles.js"></script>
